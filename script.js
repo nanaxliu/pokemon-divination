@@ -1,27 +1,24 @@
 const apiUrlBase = "https://pokeapi.co/api/v2/pokemon/"
 
-let year;
-let month;
-let day;
-
 let birthday;
+let birthdaySoup;
 let birthdayConverted;
 
 let btn = document.querySelector("button")
 
 btn.addEventListener('click', () => {
-    let year = document.getElementById("year");
-    year = form.elements[0].value;
-    let month = document.getElementById("month");
-    month = form.elements[1].value;
-    let day = document.getElementById("day");
-    day = form.elements[2].value;
-
-    let birthday = Number(Math.round(year/month)) + Number(day);
-    birthdayConverted = birthday.toString()
+    let birthday = document.getElementById("birthday");
+    birthday = form.elements[0].value;
+    let textbday = birthday.toString();
+    
+	const year = textbday.slice(0, 4);
+    const month = textbday.slice(5, 7);
+    const day = textbday.slice(8, 10);
+    
+	birthdaySoup = Number(Math.round(year/month)) + Number(day);
+    birthdayConverted = birthdaySoup.toString()
     fetchPokemon()
 })
-
 
 async function fetchPokemon(){
 
@@ -45,3 +42,7 @@ async function fetchPokemon(){
     }
     
   }
+
+
+
+  
