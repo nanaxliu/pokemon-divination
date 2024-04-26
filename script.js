@@ -29,10 +29,6 @@ btn.addEventListener('click', () => {
 
     var image = document.getElementById('sprite');
     image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${birthdayConverted}.png`
-    
-    /*
-    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${birthdayConverted}.png
-    */
 
 })
 

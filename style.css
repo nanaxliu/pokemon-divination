@@ -1,18 +1,74 @@
+@font-face {
+  font-family: 'zpix';
+  src: url(assets/zpix.ttf);
+}
+
 button {
-    background-color: #04AA6D; /* Green */
-    border: none;
-    color: white;
-    padding: 16px;
+    background-color: rgb(198, 161, 11);
+    border-radius: 5px;
+    padding: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    grid-area: 3/3/4/14;
+    text-align: center;
+    font-family: 'zpix';
+    box-shadow: none;
   }
 
-  .container {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(7, 1fr);
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(25, 1fr);
+}
+
+.gameboy {
+  grid-area: 7/5/21/22;
+  background-image: url(assets/nintendods.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.birthdayForm {
+  font-family: 'zpix';
+  grid-area: 2/3/5/24;
+  text-align: center;
+  font-size: 30px;
+}
+
+input[type="date"]{
+  background-color: white;
+  padding: 15px;
+  border: solid rgb(198, 161, 11);
+  border-radius: 5px;
+  font-family: 'zpix';
+  width: 200px;
+  text-align :center;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+  text-align: center;
+}
+
+#result {
+  background-color: white;
+  text-align: center;
+  border: solid rgb(198, 161, 11);
+  border-radius: 5px;
+  font-family: 'zpix';
+  grid-area: 15/11/16/16;
+  margin-right: 5%;
+  padding-top: 2%;
+}
+
+#sprite {
+  grid-area: 9/10/16/20;
+  margin-top: 3%;
+  margin-left: 17%;
 }

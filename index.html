@@ -7,12 +7,15 @@
 </head>
 <body>
 	<div class = "container">
-		<br><br><br><br>
-		<form id = "form">
-			<label for="birthday">Birthday</label>
-			<input type="date" id="birthday" name="birthday">
-		</form>
-		<button>Submit</button>
+		<div class = "gameboy"></div>
+		<div class = "birthdayForm">
+			<form id = "form">
+				<label for="birthday">Enter your birthday for your Pokémon</label>
+				<br><br>
+				<input type="date" id="birthday" name="birthday">
+			</form>
+			<button>Submit</button>
+		</div>
 		<div id = "result"></div>
 		<img id = "sprite" style = "image-rendering: pixelated;" height="200px">
 	</div>
@@ -20,3 +23,9 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+<!-- 
+<button>Submit</button>
+<div id = "result"></div>
+<img id = "sprite" style = "image-rendering: pixelated;" height="200px">
+-->
