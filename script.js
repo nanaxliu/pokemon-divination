@@ -4,6 +4,9 @@ let birthday;
 let birthdaySoup;
 let birthdayConverted;
 
+let pokeID;
+let pokeIDConverted;
+
 let btn = document.querySelector("button")
 
 btn.addEventListener('click', () => {
@@ -16,8 +19,22 @@ btn.addEventListener('click', () => {
     const day = textbday.slice(8, 10);
     
 	birthdaySoup = Number(Math.round(year/month)) + Number(day);
+
+    if (birthdaySoup > 1302){
+        birthdaySoup = Math.round(birthdaySoup/2)
+    }
+
+    pokeID = birthdaySoup
+    if (pokeID > 630){
+        pokeID = pokeID + 1
+    }
+
     birthdayConverted = birthdaySoup.toString()
+    pokeIDConverted = pokeID.toString()
     fetchPokemon()
+
+    var image = document.getElementById('sprite');
+    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeIDConverted}.png`
 })
 
 async function fetchPokemon(){
