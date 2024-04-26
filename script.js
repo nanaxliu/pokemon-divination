@@ -4,10 +4,10 @@ let birthday;
 let birthdaySoup;
 let birthdayConverted;
 
-let pokeID;
-let pokeIDConverted;
 
 let btn = document.querySelector("button")
+
+document.addEventListener('DOMContentLoaded', () => {
 
 btn.addEventListener('click', () => {
     let birthday = document.getElementById("birthday");
@@ -24,17 +24,16 @@ btn.addEventListener('click', () => {
         birthdaySoup = Math.round(birthdaySoup/2)
     }
 
-    pokeID = birthdaySoup
-    if (pokeID > 630){
-        pokeID = pokeID + 1
-    }
-
     birthdayConverted = birthdaySoup.toString()
-    pokeIDConverted = pokeID.toString()
     fetchPokemon()
 
     var image = document.getElementById('sprite');
-    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeIDConverted}.png`
+    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${birthdayConverted}.png`
+    
+    /*
+    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${birthdayConverted}.png
+    */
+
 })
 
 async function fetchPokemon(){
@@ -52,6 +51,9 @@ async function fetchPokemon(){
 
     const data = await response.json();
     console.log(data)
+
+    const PokeName = data.name
+    document.getElementById("result").innerHTML = `you got ${PokeName}!`
     }
     
     catch (error){
@@ -60,6 +62,6 @@ async function fetchPokemon(){
     
   }
 
-
+})
 
   
